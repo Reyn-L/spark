@@ -6,9 +6,13 @@ const hbs = exphbs.create({
   extname: 'hbs'
 });
 
+app.use(express.static('./public'));
+
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+const routes = require('./routes/');
+app.use('/', routes);
 
 const PORT = process.env.PORT || 8080;
 
