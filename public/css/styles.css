@@ -58,7 +58,8 @@ html, body {
     .parking-container .parking-header img {
       height: 50%;
       margin: 0 30px;
-      width: auto; }
+      width: auto;
+      cursor: pointer; }
   .parking-container .parking-content {
     display: flex;
     justify-content: flex-start;

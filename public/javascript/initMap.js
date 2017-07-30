@@ -1,3 +1,8 @@
+const parkingBack = document.getElementById('parking-back');
+parkingBack.addEventListener('click', function() {
+  modal.className = 'modal';
+});
+
 function initMap() {
   let map;
   const modal = document.getElementById('modal');
