@@ -10,20 +10,17 @@ html, body {
   width: 100%; }
 
 .logo-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, #F7882F, #F7C331);
-  box-sizing: content-box;
-  position: relative; }
+  box-sizing: content-box; }
   .logo-overlay.hidden {
     display: none; }
 
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0 0 15px 0;
   background-color: white;
   height: 150px;
   width: 150px;
@@ -81,10 +78,8 @@ html, body {
       height: 45%;
       padding: 0 40px; }
       .parking-container .parking-content .info-text h1 {
-        font-size: 100px;
         margin: 0; }
       .parking-container .parking-content .info-text h2 {
-        font-size: 60px;
         margin: 0; }
       .parking-container .parking-content .info-text .distance-price-like {
         display: flex;
@@ -100,43 +95,21 @@ html, body {
         height: 50px;
         margin: auto; }
 
-#contain {
-  background: linear-gradient(135deg, #F7882F, #F7C331);
+#booking-confirmation-container {
   display: flex;
-  flex-wrap: wrap;
-  font-family: 'Source Sans Pro', sans-serif;
-  letter-spacing: 0.2em;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
-  box-sizing: content-box; }
-
-#logo {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background-color: white; }
-
-img {
-  width: 100%;
-  height: 100%; }
-
-.container {
-  text-align: center;
-  margin-bottom: 25%;
-  color: white; }
-
-button {
-  border: none;
-  background-color: #6B7A8F;
-  padding: 15px 32px;
+  font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 0.2em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 8px; }
+  box-sizing: content-box;
+  background: linear-gradient(135deg, #F7882F, #F7C331); }
+
+.btn {
+  background-color: #6B7A8F;
+  letter-spacing: 0.2em; }
 
 .dashcontent {
   font-family: 'Source Sans Pro', sans-serif;
