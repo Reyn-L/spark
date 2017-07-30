@@ -64,6 +64,9 @@ h1, h2 {
       margin: 0 30px;
       width: auto;
       cursor: pointer; }
+  .parking-container #park-img {
+    height: 100%;
+    width: 100%; }
   .parking-container .parking-content {
     display: flex;
     justify-content: center;

@@ -8,8 +8,10 @@ const modal = document.getElementById('modal');
 const modal_address_state = document.getElementById('address-state');
 const modal_address_street = document.getElementById('address-street');
 const modal_price = document.getElementById('parking-price');
+const modal_img = document.getElementById('park-img');
 const book_stall_btn = document.getElementById('book-this-stall');
 const confirmation_modal = document.getElementById('booking-confirmation-modal');
+
 
 book_stall_btn.addEventListener('click', function() {
   modal.className = 'modal';
@@ -17,10 +19,11 @@ book_stall_btn.addEventListener('click', function() {
   confirmation_modal.className += ' active';
 });
 
-function modifyModal(address_state, address_street, price) {
+function modifyModal(address_state, address_street, price, imgUrl) {
   modal_address_street.innerText = address_street;
   modal_address_state.innerText = address_state;
   modal_price.innerText = price;
+  modal_img.src = imgUrl;
 }
 
 function getDollar(amt) {
@@ -94,7 +97,7 @@ function initMap() {
         infoWindowEl.addEventListener('click', function() {
           console.log("clicked")
           modal.className += ' active'
-          modifyModal(renter.address_state, renter.address_street, renter.price);
+          modifyModal(renter.address_state, renter.address_street, renter.price, renter.pictureUrl);
         })
 
         infoWindowEl.innerText = contentString;
