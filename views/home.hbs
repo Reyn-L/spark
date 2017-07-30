@@ -41,7 +41,7 @@
       <img src="bolt.svg" alt="logo">
     </div>
     <div class="booking-confirmation-text">You've booked your stall!</div>
-    <button class="booking-confirmation-button">Go To Dashboard</button>
+    <button id='go-to-timer' class="booking-confirmation-button">Go To Dashboard</button>
   </div>
 </div>
 </div>
@@ -57,8 +57,16 @@
 </div>
 </div>
 
-<div id="map"></div>
+<div id="timer-modal">
+  <div class='dashcontent'>
+    <h2 class= "header"> Time parked: </h2>
+    <div id='time'></div>
+    <button class='checkoutBorder' onclick ="">checkout</button>
+  </div>
+</div>
 
+<div id="map"></div>
+<script src='javascript/time.js'></script>
 <script src='javascript/centerControl.js'></script>
 <script src='javascript/initMap.js'></script>
 <script async defer

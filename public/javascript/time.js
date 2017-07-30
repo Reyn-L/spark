@@ -1,8 +1,3 @@
-const time = document.getElementById('time');
-let total = 0;
-
-setInterval(setTime, 1000);
-
 function setTime() {
   ++total;
   let hour = parseInt(total/3600);

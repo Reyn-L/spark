@@ -166,6 +166,18 @@ h1 {
     height: auto;
     box-sizing: content-box; }
 
+#timer-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; }
+  #timer-modal.active {
+    z-index: 1000;
+    display: block; }
+
 .dashcontent {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;

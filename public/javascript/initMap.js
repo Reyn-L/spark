@@ -11,12 +11,18 @@ const modal_price = document.getElementById('parking-price');
 const modal_img = document.getElementById('park-img');
 const book_stall_btn = document.getElementById('book-this-stall');
 const confirmation_modal = document.getElementById('booking-confirmation-modal');
-
+const go_toTimerBtn = document.getElementById('go-to-timer');
+const timer_modal = document.getElementById('timer-modal');
 
 book_stall_btn.addEventListener('click', function() {
   modal.className = 'modal';
 
   confirmation_modal.className += ' active';
+});
+
+go_toTimerBtn.addEventListener('click', function() {
+  confirmation_modal.className = 'booking-confirmation-modal';
+  timer_modal.className += ' active';
 });
 
 function modifyModal(address_state, address_street, price, imgUrl) {
@@ -68,7 +74,6 @@ function initMap() {
     position: pos,
     map: map
   });
-
 
   //holder variable for the currentInfoWindow
   let currentInfoWindow;
