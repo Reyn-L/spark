@@ -24,6 +24,9 @@ checkout_btn.addEventListener('click', function() {
   time.innerText = '00:00:00';
   timer_modal.className = '';
   checkout_confirmation_modal.className += 'active';
+  setTimeout(function() {
+    checkout_confirmation_modal.className = '';
+  },2000);
 });
 
 let timerInterval;
