@@ -15,56 +15,57 @@
 
 .parking-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   height: 100%;
   width: 100%;
 
   .parking-header {
-    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    top: 0;
     background-color: $citrus;
     height: 8%;
     width: 100%;
     box-sizing: content-box;
 
     .chevron-img {
+      margin: 0 10px;
       height: 50%;
-      margin: 0 30px;
       width: auto;
       cursor: pointer;
     }
   }
 
-  #park-img {
-    height: 100%;
-    width: 100%;
-  }
-
   .parking-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    position: relative;
     background-color: white;
     color: $text;
     height: 92%;
     width: 100%;
+    padding: 10px;
+    text-align: center;
+
+    #park-img {
+      height: 100%;
+      width: 100%;
+    }
 
     .parking-img {
-      margin: 0 30px;
+      display: inline-block;
+      margin: auto;
       width: 100%;
       height: 40%;
       background-color: $apricot;
     }
 
     .info-text {
+      display: inline-block;
       width: 100%;
       height: auto;
-      padding: 0 40px;
+      text-align: left;
 
       .distance-price-like {
         display: flex;
@@ -78,15 +79,44 @@
           width: 25px;
         }
       }
+      .icons {
+        display: flex;
+        margin: 20px 0;
+        justify-content: space-around;
+        align-items: center;
+
+        .small-icon {
+          height: 10%;
+          width: 10%;
+        }
+
+        .small-icon-camera {
+          height: 7%;
+          width: 7%;
+        }
+      }
+      .icon-text-block {
+        display: flex;
+        margin: 0;
+        justify-content: space-around;
+        align-items: center;
+
+        .icon-text {
+          font-size: 10px;
+          width: 33%;
+          height: auto;
+        }
+      }
     }
-    .parking-button {
-      background-color: white;
-      border: 1px solid $btn-border;
-      color: $text;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 20px;
-      height: 50px;
-      box-sizing: content-box;
-    }
+  }
+  .parking-button {
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid $btn-border;
+    color: $text;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    height: 50px;
+    box-sizing: content-box;
   }
 }
