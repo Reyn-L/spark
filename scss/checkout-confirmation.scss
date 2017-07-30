@@ -32,13 +32,15 @@
     color: white;
   }
 
-  .checkout-confirmation-button {
+  .booking-confirmation-button {
     background-color: white;
     border: 1px solid $btn-border;
     color: $text;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     height: auto;
+    border-radius: 10px;
+    padding: 0 15px;
     box-sizing: content-box;
   }
 }
