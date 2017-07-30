@@ -8,6 +8,7 @@ html, body {
 }
 
 h1, h2 {
+  padding-bottom: 5px;
   margin: 0;
 }
 
@@ -21,6 +22,7 @@ $apricot: #F7882F;
 $citrus: #F7C331;
 $core: #FBF9F6;
 $text: #363636;
+$btn-border: #f2f2f2;
 
 @import 'launch-screen';
 

@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: $core;
+    background-color: white;
     color: $text;
     height: 92%;
     width: 100%;
@@ -58,7 +58,7 @@
 
     .info-text {
       width: 100%;
-      height: 45%;
+      height: auto;
       padding: 0 40px;
 
       .distance-price-like {
@@ -75,9 +75,13 @@
       }
     }
     .parking-button {
-      background-color: $blueberry;
+      background-color: white;
+      border: 1px solid $btn-border;
+      color: $text;
+      font-family: 'Source Sans Pro', sans-serif;
       font-size: 20px;
       height: 50px;
+      box-sizing: content-box;
     }
   }
 }
