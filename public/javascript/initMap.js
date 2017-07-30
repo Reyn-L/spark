@@ -13,6 +13,9 @@ const book_stall_btn = document.getElementById('book-this-stall');
 const confirmation_modal = document.getElementById('booking-confirmation-modal');
 const go_toTimerBtn = document.getElementById('go-to-timer');
 const timer_modal = document.getElementById('timer-modal');
+let timerInterval;
+  let total = 0;
+
 
 book_stall_btn.addEventListener('click', function() {
   modal.className = 'modal';
@@ -21,6 +24,10 @@ book_stall_btn.addEventListener('click', function() {
 });
 
 go_toTimerBtn.addEventListener('click', function() {
+  const time = document.getElementById('time');
+
+  timerInterval = setInterval(setTime, 1000);
+
   confirmation_modal.className = 'booking-confirmation-modal';
   timer_modal.className += ' active';
 });
