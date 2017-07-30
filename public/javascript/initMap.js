@@ -1,8 +1,6 @@
 function initMap() {
   let map;
 
-
-
   navigator.geolocation.getCurrentPosition(function(position) {
     const pos = {
       lat: position.coords.latitude,
@@ -21,6 +19,19 @@ function initMap() {
 
   map.setCenter(pos);
 
+  //
+  var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl(centerControlDiv, map, pos);
+
+  centerControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+
+  let currentInfoWindow;
+
+  map.addListener('click', function() {
+    currentInfoWindow.close();
+  });
+  //
   getRenterMarkers()
     .then(renters => {
       renters.forEach(renter => {
@@ -34,6 +45,27 @@ function initMap() {
           position: pos,
           map: map
         });
+
+        const contentString = `${renter.address} $${renter.price}`;
+        const infoWindowEl = document.createElement('div');
+        infoWindowEl.addEventListener('click', function() {
+          console.log('asdfasdf')
+        })
+
+        infoWindowEl.innerText = contentString;
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: infoWindowEl
+        })
+
+        marker.addListener('click', function() {
+          if(currentInfoWindow) currentInfoWindow.close();
+
+          currentInfoWindow = infoWindow;
+
+          infoWindow.open(map, marker);
+        });
+
       });
     })
   });
