@@ -1,6 +1,41 @@
+const parkingBack = document.getElementById('parking-back');
+
+parkingBack.addEventListener('click', function() {
+  modal.className = 'modal';
+});
+
+const modal = document.getElementById('modal');
+const modal_address_state = document.getElementById('address-state');
+const modal_address_street = document.getElementById('address-street');
+const modal_price = document.getElementById('parking-price');
+const modal_img = document.getElementById('park-img');
+const book_stall_btn = document.getElementById('book-this-stall');
+const confirmation_modal = document.getElementById('booking-confirmation-modal');
+
+
+book_stall_btn.addEventListener('click', function() {
+  modal.className = 'modal';
+
+  confirmation_modal.className += ' active';
+});
+
+function modifyModal(address_state, address_street, price, imgUrl) {
+  modal_address_street.innerText = address_street;
+  modal_address_state.innerText = address_state;
+  modal_price.innerText = price;
+  modal_img.src = imgUrl;
+}
+
+function getDollar(amt) {
+  if(amt < 10) {
+    return '$'
+  } else {
+    return '$$'
+  }
+}
+
 function initMap() {
   let map;
-  const modal = document.getElementById('modal');
 
   //find current position of user
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -56,11 +91,13 @@ function initMap() {
           map: map
         });
 
-        const contentString = `${renter.address} $${renter.price}`;
+        const dollarAmt = getDollar(renter.price);
+        const contentString = `${renter.address_street} ${renter.address_state} ${dollarAmt}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
           console.log("clicked")
           modal.className += ' active'
+          modifyModal(renter.address_state, renter.address_street, renter.price, renter.pictureUrl);
         })
 
         infoWindowEl.innerText = contentString;
