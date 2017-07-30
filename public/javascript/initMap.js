@@ -15,6 +15,14 @@ function modifyModal(address_state, address_street, price) {
   modal_price.innerText = price;
 }
 
+function getDollar(amt) {
+  if(amt < 10) {
+    return '$'
+  } else {
+    return '$$'
+  }
+}
+
 function initMap() {
   let map;
 
@@ -72,7 +80,8 @@ function initMap() {
           map: map
         });
 
-        const contentString = `${renter.address_street} ${renter.address_state} $${renter.price}`;
+        const dollarAmt = getDollar(renter.price);
+        const contentString = `${renter.address_street} ${renter.address_state} ${dollarAmt}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
           console.log("clicked")
