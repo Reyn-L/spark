@@ -1,41 +1,82 @@
+const parkingBack = document.getElementById('parking-back');
+
+parkingBack.addEventListener('click', function() {
+  modal.className = 'modal';
+});
+
+const modal = document.getElementById('modal');
+const modal_address_state = document.getElementById('address-state');
+const modal_address_street = document.getElementById('address-street');
+const modal_price = document.getElementById('parking-price');
+const modal_img = document.getElementById('park-img');
+const book_stall_btn = document.getElementById('book-this-stall');
+const confirmation_modal = document.getElementById('booking-confirmation-modal');
+
+
+book_stall_btn.addEventListener('click', function() {
+  modal.className = 'modal';
+
+  confirmation_modal.className += ' active';
+});
+
+function modifyModal(address_state, address_street, price, imgUrl) {
+  modal_address_street.innerText = address_street;
+  modal_address_state.innerText = address_state;
+  modal_price.innerText = price;
+  modal_img.src = imgUrl;
+}
+
+function getDollar(amt) {
+  if(amt < 10) {
+    return '$'
+  } else {
+    return '$$'
+  }
+}
+
 function initMap() {
   let map;
 
+  //find current position of user
   navigator.geolocation.getCurrentPosition(function(position) {
     const pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude
   };
 
+  //create map with current position as center
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14, //check the url to see how much zoom
-    center: pos
-  });
-
-  const marker = new google.maps.Marker({
-    position: pos,
-    map: map
+    zoom: 15,
+    center: pos,
+    disableDefaultUI: true
   });
 
   map.setCenter(pos);
 
-  //
+  map.addListener('click', function() {
+    currentInfoWindow.close();
+  });
+
+  //create centerControl button on map
   var centerControlDiv = document.createElement('div');
   var centerControl = new CenterControl(centerControlDiv, map, pos);
 
   centerControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
 
+  const marker = new google.maps.Marker({
+    position: pos,
+    map: map
+  });
+
+
+  //holder variable for the currentInfoWindow
   let currentInfoWindow;
 
-  map.addListener('click', function() {
-    currentInfoWindow.close();
-  });
-  //
+  //get fake renter data and make markers to place on google map
   getRenterMarkers()
     .then(renters => {
       renters.forEach(renter => {
-        console.log(renter)
         const pos = {
           lat: parseFloat(renter.lat),
           lng: parseFloat(renter.long)
@@ -43,13 +84,20 @@ function initMap() {
 
         const marker = new google.maps.Marker({
           position: pos,
+          icon: {
+            url: 'bolt.png',
+            scaledSize: new google.maps.Size(40, 40)
+          },
           map: map
         });
 
-        const contentString = `${renter.address} $${renter.price}`;
+        const dollarAmt = getDollar(renter.price);
+        const contentString = `${renter.address_street} ${renter.address_state} ${dollarAmt}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
-          console.log('asdfasdf')
+          console.log("clicked")
+          modal.className += ' active'
+          modifyModal(renter.address_state, renter.address_street, renter.price, renter.pictureUrl);
         })
 
         infoWindowEl.innerText = contentString;
@@ -68,6 +116,10 @@ function initMap() {
 
       });
     })
+    .then(() => {
+      const overlay = document.getElementsByClassName('logo-overlay');
+      overlay[0].className += ' hidden';
+    });
   });
 }
 

@@ -3,7 +3,52 @@
     <img src="bolt.svg" alt="logo"/>
   </div>
 </div>
+<div id='modal'>
+  <div class="parking-container">
+    <div class="parking-header">
+      <img id='parking-back' src="chevron-pointing-to-the-left.svg" alt="back" class="chevron-img">
+    </div>
+    <div class="parking-content">
+      <div class="parking-img">
+        <img src="" id="park-img" />
+      </div>
+      <div class="info-text">
+        <h1 id="address-street">1050 Queen St. #100</h1>
+        <h2 id="address-state">Honolulu, HI 96814</h2>
+        <div class="distance-price-like">
+          <div class="distance">0.9 mi | $<span id="parking-price">8</span>/hr</div>
+          <img src="like.svg" alt="like" class="like-img">
+        </div>
+      </div>
+      <button id="book-this-stall" type="button" class="parking-button">Book This Stall</button>
+    </div>
+  </div>
+</div>
+
+<div id="booking-confirmation-modal">
+  <div class="booking-confirmation-container">
+    <div class="logo">
+      <img src="bolt.svg" alt="logo">
+    </div>
+    <div class="booking-confirmation-text">You've booked your stall!</div>
+    <button class="booking-confirmation-button">Go To Dashboard</button>
+  </div>
+</div>
+</div>
+
+<div id="checkout-confirmation-modal">
+  <div class="checkout-confirmation-container">
+    <div class="logo">
+      <img src="bolt.svg" alt="logo">
+    </div>
+    <div class="checkout-confirmation-text">You've checked out of your stall!</div>
+    <button class="checkout-confirmation-button">Book Another Stall</button>
+  </div>
+</div>
+</div>
+
 <div id="map"></div>
+
 <script src='javascript/centerControl.js'></script>
 <script src='javascript/initMap.js'></script>
 <script async defer

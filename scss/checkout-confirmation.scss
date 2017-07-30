@@ -1,4 +1,4 @@
-#booking-confirmation-modal {
+#checkout-confirmation-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
   }
 }
 
-.booking-confirmation-container {
+.checkout-confirmation-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,14 +25,14 @@
   box-sizing: content-box;
   background: linear-gradient(135deg, $apricot, $citrus);
 
-  .booking-confirmation-text {
+  .checkout-confirmation-text {
     padding: 20px;
     font-size: 36px;
     text-align: center;
     color: white;
   }
 
-  .booking-confirmation-button {
+  .checkout-confirmation-button {
     background-color: white;
     border: 1px solid $btn-border;
     color: $text;

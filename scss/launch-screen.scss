@@ -1,15 +1,18 @@
 .logo-overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(135deg, $apricot, $citrus);
-    box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, $apricot, $citrus);
+  box-sizing: content-box;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .logo {
-  margin: 0 0 15px 0;
   background-color: white;
   height: 150px;
   width: 150px;
