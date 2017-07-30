@@ -91,6 +91,8 @@ h1, h2 {
           height: 25px;
           width: 25px; }
     .parking-container .parking-content .parking-button {
+      background-color: #6B7A8F;
+      font-size: 20px;
       height: 50px; }
 
 #booking-confirmation-container {
