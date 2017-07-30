@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #map {
@@ -14,6 +15,8 @@ html, body {
 $blueberry: #6B7A8F;
 $apricot: #F7882F;
 $citrus: #F7C331;
-$core: #DCC7AA;
+$core: #FBF9F6;
+$text: #363636;
 
-@import 'launch-screen'
+@import 'launch-screen';
+@import 'parking-details';
