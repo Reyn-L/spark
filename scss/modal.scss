@@ -1,0 +1,15 @@
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  &.active {
+    z-index: 1000;
+    display: block;
+  }
+}

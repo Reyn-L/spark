@@ -10,17 +10,34 @@ html, body {
   width: 100%; }
 
 .logo-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, #F7882F, #F7C331);
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  position: relative; }
+  .logo-overlay.hidden {
+    display: none; }
 
 .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 0 15px 0;
   background-color: white;
   height: 150px;
   width: 150px;
   border-radius: 50%; }
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  overflow: auto; }
+  #modal.active {
+    z-index: 1000;
+    display: block; }

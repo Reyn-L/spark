@@ -1,41 +1,47 @@
 function initMap() {
   let map;
+  const modal = document.getElementById('modal');
 
+  //find current position of user
   navigator.geolocation.getCurrentPosition(function(position) {
     const pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude
   };
 
+  //create map with current position as center
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14, //check the url to see how much zoom
-    center: pos
-  });
-
-  const marker = new google.maps.Marker({
-    position: pos,
-    map: map
+    zoom: 15,
+    center: pos,
+    disableDefaultUI: true
   });
 
   map.setCenter(pos);
 
-  //
+  map.addListener('click', function() {
+    currentInfoWindow.close();
+  });
+
+  //create centerControl button on map
   var centerControlDiv = document.createElement('div');
   var centerControl = new CenterControl(centerControlDiv, map, pos);
 
   centerControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
 
+  const marker = new google.maps.Marker({
+    position: pos,
+    map: map
+  });
+
+
+  //holder variable for the currentInfoWindow
   let currentInfoWindow;
 
-  map.addListener('click', function() {
-    currentInfoWindow.close();
-  });
-  //
+  //get fake renter data and make markers to place on google map
   getRenterMarkers()
     .then(renters => {
       renters.forEach(renter => {
-        console.log(renter)
         const pos = {
           lat: parseFloat(renter.lat),
           lng: parseFloat(renter.long)
@@ -43,13 +49,17 @@ function initMap() {
 
         const marker = new google.maps.Marker({
           position: pos,
+          icon: {
+            url: 'bolt.png',
+            scaledSize: new google.maps.Size(40, 40)
+          },
           map: map
         });
 
         const contentString = `${renter.address} $${renter.price}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
-          console.log('asdfasdf')
+          modal.className += ' active'
         })
 
         infoWindowEl.innerText = contentString;
@@ -68,6 +78,10 @@ function initMap() {
 
       });
     })
+    .then(() => {
+      const overlay = document.getElementsByClassName('logo-overlay');
+      overlay[0].className += ' hidden';
+    });
   });
 }
 
