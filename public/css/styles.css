@@ -161,3 +161,40 @@ h1, h2 {
   text-align: center;
   border: 1px solid black;
   font-size: 45px; }
+
+#checkout-confirmation-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; }
+  #checkout-confirmation-modal.active {
+    z-index: 1000;
+    display: block; }
+
+.checkout-confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  letter-spacing: 0.2em;
+  box-sizing: content-box;
+  background: linear-gradient(135deg, #F7882F, #F7C331); }
+  .checkout-confirmation-container .checkout-confirmation-text {
+    padding: 20px;
+    font-size: 36px;
+    text-align: center;
+    color: white; }
+  .checkout-confirmation-container .checkout-confirmation-button {
+    background-color: white;
+    border: 1px solid #f2f2f2;
+    color: #363636;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    height: auto;
+    box-sizing: content-box; }
