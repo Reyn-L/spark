@@ -1,4 +1,19 @@
-#booking-confirmation-container{
+#booking-confirmation-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  &.active {
+    z-index: 1000;
+    display: block;
+  }
+}
+
+.booking-confirmation-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +25,8 @@
   background: linear-gradient(135deg, $apricot, $citrus);
 }
 
-.btn {
+.confirmation-button{
+  display: block;
   background-color: $blueberry;
   letter-spacing: 0.2em;
 }

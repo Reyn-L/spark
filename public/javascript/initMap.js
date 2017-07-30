@@ -8,6 +8,14 @@ const modal = document.getElementById('modal');
 const modal_address_state = document.getElementById('address-state');
 const modal_address_street = document.getElementById('address-street');
 const modal_price = document.getElementById('parking-price');
+const book_stall_btn = document.getElementById('book-this-stall');
+const confirmation_modal = document.getElementById('booking-confirmation-modal');
+
+book_stall_btn.addEventListener('click', function() {
+  modal.className = 'modal';
+
+  confirmation_modal.className += ' active';
+});
 
 function modifyModal(address_state, address_street, price) {
   modal_address_street.innerText = address_street;

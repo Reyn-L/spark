@@ -35,7 +35,6 @@ h1, h2 {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: yellow;
   height: 100%;
   width: 100%;
   overflow: auto; }
@@ -96,7 +95,19 @@ h1, h2 {
       font-size: 20px;
       height: 50px; }
 
-#booking-confirmation-container {
+#booking-confirmation-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; }
+  #booking-confirmation-modal.active {
+    z-index: 1000;
+    display: block; }
+
+.booking-confirmation-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +118,8 @@ h1, h2 {
   box-sizing: content-box;
   background: linear-gradient(135deg, #F7882F, #F7C331); }
 
-.btn {
+.confirmation-button {
+  display: block;
   background-color: #6B7A8F;
   letter-spacing: 0.2em; }
 
