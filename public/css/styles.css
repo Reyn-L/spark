@@ -7,6 +7,7 @@ html, body {
   font-family: 'Source Sans Pro', sans-serif; }
 
 h1, h2 {
+  padding-bottom: 5px;
   margin: 0; }
 
 #map {
@@ -68,7 +69,7 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #FBF9F6;
+    background-color: white;
     color: #363636;
     height: 92%;
     width: 100%; }
@@ -79,7 +80,7 @@ h1, h2 {
       background-color: #F7882F; }
     .parking-container .parking-content .info-text {
       width: 100%;
-      height: 45%;
+      height: auto;
       padding: 0 40px; }
       .parking-container .parking-content .info-text .distance-price-like {
         display: flex;
@@ -91,9 +92,13 @@ h1, h2 {
           height: 25px;
           width: 25px; }
     .parking-container .parking-content .parking-button {
-      background-color: #6B7A8F;
+      background-color: white;
+      border: 1px solid #f2f2f2;
+      color: #363636;
+      font-family: 'Source Sans Pro', sans-serif;
       font-size: 20px;
-      height: 50px; }
+      height: 50px;
+      box-sizing: content-box; }
 
 #booking-confirmation-container {
   display: flex;
