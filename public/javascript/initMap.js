@@ -1,11 +1,22 @@
 const parkingBack = document.getElementById('parking-back');
+
 parkingBack.addEventListener('click', function() {
   modal.className = 'modal';
 });
 
+const modal = document.getElementById('modal');
+const modal_address_state = document.getElementById('address-state');
+const modal_address_street = document.getElementById('address-street');
+const modal_price = document.getElementById('parking-price');
+
+function modifyModal(address_state, address_street, price) {
+  modal_address_street.innerText = address_street;
+  modal_address_state.innerText = address_state;
+  modal_price.innerText = price;
+}
+
 function initMap() {
   let map;
-  const modal = document.getElementById('modal');
 
   //find current position of user
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -61,11 +72,12 @@ function initMap() {
           map: map
         });
 
-        const contentString = `${renter.address} $${renter.price}`;
+        const contentString = `${renter.address_street} ${renter.address_state} $${renter.price}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
           console.log("clicked")
           modal.className += ' active'
+          modifyModal(renter.address_state, renter.address_street, renter.price);
         })
 
         infoWindowEl.innerText = contentString;
