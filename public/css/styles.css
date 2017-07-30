@@ -18,6 +18,10 @@ h1 {
   height: 100%;
   width: 100%; }
 
+.info-window {
+  font-size: 15px;
+  line-height: 1.5em; }
+
 .logo-overlay {
   display: flex;
   justify-content: center;
