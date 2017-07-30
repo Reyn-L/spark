@@ -1,3 +1,6 @@
+body {
+  background: linear-gradient(135deg, $apricot, $citrus);
+}
 .dashcontent {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
@@ -8,15 +11,21 @@
   height:100%;
   width: 100%;
 }
+.header {
+  margin-top: 38%;
+  vertical-align: middle;
+}
 
 #time {
-font-size: 100px;
+  font-size: 200px;
 }
 
 .checkoutBorder {
   margin: auto;
-  height: 300px;
-  width: 300px;
+  padding: 5px;
+  letter-spacing: 0.1em;
+  height: 320px;
+  width: 320px;
   border-radius: 50%;
   text-align: center;
   border: 1px solid black;
