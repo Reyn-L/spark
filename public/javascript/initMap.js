@@ -59,6 +59,7 @@ function initMap() {
         const contentString = `${renter.address} $${renter.price}`;
         const infoWindowEl = document.createElement('div');
         infoWindowEl.addEventListener('click', function() {
+          console.log("clicked")
           modal.className += ' active'
         })
 
