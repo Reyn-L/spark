@@ -12,7 +12,8 @@ body {
   background: linear-gradient(135deg, #F7882F, #F7C331);
   box-sizing: content-box; }
   body .logo {
+    margin: 0 0 15px 0;
     background-color: white;
-    height: 500px;
-    width: 500px;
+    height: 350px;
+    width: 350px;
     border-radius: 50%; }
