@@ -1,4 +1,4 @@
-#contain {
+#favorites-container {
   background: linear-gradient(135deg, #F7882F, #F7C331);
   display: flex;
   flex-wrap: wrap;
@@ -24,12 +24,13 @@
   margin-right: 60px;
   vertical-align: middle;
   font-size: 12px;
-  color:white;
+  color:$blueberry;
 }
 
 .header-container .header-text{
   display: inline-block;
   vertical-align: middle;
+  padding-left: 20px;
 }
 
 .address-form{
@@ -75,6 +76,12 @@
   background-color: $core;
 }
 
+.my-favorite-text{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top:15px;
+}
+
 .star-container{
   border: solid 2px black;
   height:60px;
@@ -106,13 +113,13 @@
   border: solid 2px black;
   overflow: auto;
   line-height: 50px;
-  padding: 10px 20px;
+  padding: 14px 45px;
   text-align: right;
   background-color: white;
 }
 
-.arrow{
-  float:right;
-  background: none;
+.arrow-button{
+  background-color: white;
+  border:none;
   font-size: 20px;
 }
