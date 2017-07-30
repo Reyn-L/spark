@@ -24,6 +24,9 @@ checkout_btn.addEventListener('click', function() {
   time.innerText = '00:00:00';
   timer_modal.className = '';
   checkout_confirmation_modal.className += 'active';
+  setTimeout(function() {
+    checkout_confirmation_modal.className = '';
+  },2000);
 });
 
 let timerInterval;
@@ -33,16 +36,22 @@ let total = 0;
 book_stall_btn.addEventListener('click', function() {
   modal.className = 'modal';
 
+
   confirmation_modal.className += ' active';
+    setTimeout(function() {
+    timerInterval = setInterval(setTime, 1000);
+    confirmation_modal.className = '';
+    timer_modal.className += 'active';
+  }, 2000)
 });
 
-go_toTimerBtn.addEventListener('click', function() {
+// go_toTimerBtn.addEventListener('click', function() {
 
-  timerInterval = setInterval(setTime, 1000);
+//
 
-  confirmation_modal.className = 'booking-confirmation-modal';
-  timer_modal.className += ' active';
-});
+//   confirmation_modal.className = '';
+//   timer_modal.className += ' active';
+// });
 
 function modifyModal(address_state, address_street, price, imgUrl) {
   modal_address_street.innerText = address_street;
@@ -116,18 +125,20 @@ function initMap() {
         });
 
         const dollarAmt = getDollar(renter.price);
-        const contentString = `${renter.address_street} ${renter.address_state} ${dollarAmt}`;
-        const infoWindowEl = document.createElement('div');
-        infoWindowEl.addEventListener('click', function() {
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'info-window';
+        contentDiv.innerHTML = `${renter.address_street} ${renter.address_state} <span style='margin-left: 5px; font-weight: 600;'>${dollarAmt}</span>`;
+
+        contentDiv.addEventListener('click', function() {
           console.log("clicked")
           modal.className += ' active'
           modifyModal(renter.address_state, renter.address_street, renter.price, renter.pictureUrl);
         })
 
-        infoWindowEl.innerText = contentString;
 
         const infoWindow = new google.maps.InfoWindow({
-          content: infoWindowEl
+          content: contentDiv
         })
 
         marker.addListener('click', function() {

@@ -17,11 +17,12 @@
   controlText.id = 'time';
   controlText.style.color = 'rgb(25,25,25)';
   controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-  controlText.style.fontSize = '16px';
+  controlText.style.fontSize = '22px';
+  controlText.style.fontWeight = '600';
   controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
   controlText.style.paddingRight = '5px';
-  controlText.innerHTML = '^';
+  controlText.innerHTML = '';
   controlUI.appendChild(controlText);
 
 }
