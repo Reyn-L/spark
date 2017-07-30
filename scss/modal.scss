@@ -23,16 +23,16 @@
   width: 100%;
 
   .parking-header {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: relative;
     background-color: $citrus;
     height: 8%;
     width: 100%;
     box-sizing: content-box;
 
-    img {
+    .chevron-img {
       height: 50%;
       margin: 0 30px;
       width: auto;
@@ -42,7 +42,7 @@
 
   .parking-content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     background-color: $core;
@@ -62,34 +62,21 @@
       height: 45%;
       padding: 0 40px;
 
-      h1 {
-        margin: 0;
-      }
-
-      h2 {
-        margin: 0;
-      }
-
       .distance-price-like {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 40px;
+        margin: 10px 0;
+        font-size: 20px;
 
-        .distance, .price {
-          font-size: 60px;
-          font-weight: bold;
-        }
-
-        img {
-          height: 60px;
+        .like-img {
+          height: 25px;
+          width: 25px;
         }
       }
-
-      .parking-button {
-        height: 50px;
-        margin: auto;
-      }
+    }
+    .parking-button {
+      height: 50px;
     }
   }
 }
