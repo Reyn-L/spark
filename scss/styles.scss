@@ -15,9 +15,12 @@ $blueberry: #6B7A8F;
 $apricot: #F7882F;
 $citrus: #F7C331;
 $core: #DCC7AA;
+$text: #363636;
 
 @import 'launch-screen';
 
 @import 'modal';
 
 @import 'confirmation-page';
+
+@import 'dash';

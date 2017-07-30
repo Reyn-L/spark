@@ -42,6 +42,64 @@ html, body {
     z-index: 1000;
     display: block; }
 
+.parking-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%; }
+  .parking-container .parking-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background-color: #F7C331;
+    height: 8%;
+    width: 100%;
+    box-sizing: content-box; }
+    .parking-container .parking-header img {
+      height: 50%;
+      margin: 0 30px;
+      width: auto; }
+  .parking-container .parking-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #DCC7AA;
+    color: #363636;
+    height: 92%;
+    width: 100%; }
+    .parking-container .parking-content .parking-img {
+      margin: 0 30px;
+      width: 100%;
+      height: 40%;
+      background-color: #F7882F; }
+    .parking-container .parking-content .info-text {
+      width: 100%;
+      height: 45%;
+      padding: 0 40px; }
+      .parking-container .parking-content .info-text h1 {
+        font-size: 100px;
+        margin: 0; }
+      .parking-container .parking-content .info-text h2 {
+        font-size: 60px;
+        margin: 0; }
+      .parking-container .parking-content .info-text .distance-price-like {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px; }
+        .parking-container .parking-content .info-text .distance-price-like .distance, .parking-container .parking-content .info-text .distance-price-like .price {
+          font-size: 60px;
+          font-weight: bold; }
+        .parking-container .parking-content .info-text .distance-price-like img {
+          height: 60px; }
+      .parking-container .parking-content .info-text .parking-button {
+        height: 50px;
+        margin: auto; }
+
 #contain {
   background: linear-gradient(135deg, #F7882F, #F7C331);
   display: flex;
@@ -79,3 +137,25 @@ button {
   display: inline-block;
   font-size: 16px;
   border-radius: 8px; }
+
+.content {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 100px;
+  height: 100%;
+  width: 100%; }
+
+#time {
+  font-size: 100px; }
+
+.checkoutBorder {
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid black;
+  font-size: 45px; }

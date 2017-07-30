@@ -1,4 +1,3 @@
-/*jshint esversion: 6*/
 const time = document.getElementById('time');
 let total = 0;
 
