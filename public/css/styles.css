@@ -1,2 +1,26 @@
-p li {
-  color: red; }
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box; }
+
+#map {
+  height: 100%;
+  width: 100%; }
+
+.logo-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #F7882F, #F7C331);
+  box-sizing: content-box; }
+
+.logo {
+  margin: 0 0 15px 0;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; }
