@@ -11,14 +11,9 @@ app.use(express.static('./public'));
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-const routes = require('./routes/');
-app.use('/', routes);
-
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
+app.use('/', require('./routes'));
 
 app.listen(PORT, () => {
   console.log(`listening on PORT: ${PORT}`);
