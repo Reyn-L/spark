@@ -116,17 +116,26 @@ h1, h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   height: 100%;
   width: 100%;
   letter-spacing: 0.2em;
   box-sizing: content-box;
   background: linear-gradient(135deg, #F7882F, #F7C331); }
-
-.confirmation-button {
-  display: block;
-  background-color: #6B7A8F;
-  letter-spacing: 0.2em; }
+  .booking-confirmation-container .booking-confirmation-text {
+    padding: 20px;
+    font-size: 36px;
+    text-align: center;
+    color: white; }
+  .booking-confirmation-container .booking-confirmation-button {
+    background-color: white;
+    border: 1px solid #f2f2f2;
+    color: #363636;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    height: auto;
+    box-sizing: content-box; }
 
 .dashcontent {
   font-family: 'Source Sans Pro', sans-serif;
