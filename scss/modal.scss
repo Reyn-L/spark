@@ -66,12 +66,13 @@
       width: 100%;
       height: auto;
       text-align: left;
+      margin-top: 10px;
 
       .distance-price-like {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 10px 0;
+        margin-bottom: 20px;
         font-size: 20px;
 
         .like-img {
@@ -81,42 +82,34 @@
       }
       .icons {
         display: flex;
-        margin: 20px 0;
+        margin: 10px 0;
         justify-content: space-around;
         align-items: center;
 
-        .small-icon {
-          height: 10%;
-          width: 10%;
-        }
-
-        .small-icon-camera {
-          height: 7%;
-          width: 7%;
-        }
-      }
-      .icon-text-block {
-        display: flex;
-        margin: 0;
-        justify-content: space-around;
-        align-items: center;
-
-        .icon-text {
+        .icon-container {
+          text-align: center;
           font-size: 10px;
-          width: 33%;
-          height: auto;
+          width: 51px;
+
+          .small-icon-camera {
+            height: 70%;
+            width: 70%;
+            margin-top: 10px;
+          }
         }
       }
     }
   }
-  .parking-button {
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid $btn-border;
-    color: $text;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    height: 50px;
-    box-sizing: content-box;
-  }
+}
+.parking-button {
+  margin: 20px auto;
+  background-color: $citrus;
+  border: 1px solid $btn-border;
+  color: $text;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 15px;
+  box-sizing: content-box;
 }
