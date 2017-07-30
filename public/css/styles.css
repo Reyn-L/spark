@@ -26,14 +26,14 @@ html, body {
   width: 150px;
   border-radius: 50%; }
 
-.container {
+.container-parking {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
   width: 100%; }
-  .container .header {
+  .container-parking .header-parking {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -42,11 +42,11 @@ html, body {
     height: 8%;
     width: 100%;
     box-sizing: content-box; }
-    .container .header img {
+    .container-parking .header-parking img {
       height: 50%;
       margin: 0 30px;
       width: auto; }
-  .container .content-body {
+  .container-parking .content-body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -55,31 +55,31 @@ html, body {
     color: #363636;
     height: 92%;
     width: 100%; }
-    .container .content-body .parking-img {
+    .container-parking .content-body .parking-img {
       margin: 0 30px;
       width: 100%;
       height: 40%;
       background-color: #F7882F; }
-    .container .content-body .info-text {
+    .container-parking .content-body .info-text {
       width: 100%;
       height: 45%;
       padding: 0 40px; }
-      .container .content-body .info-text h1 {
+      .container-parking .content-body .info-text h1 {
         font-size: 100px;
         margin: 0; }
-      .container .content-body .info-text h2 {
+      .container-parking .content-body .info-text h2 {
         font-size: 60px;
         margin: 0; }
-      .container .content-body .info-text .distance-price-like {
+      .container-parking .content-body .info-text .distance-price-like {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 40px; }
-        .container .content-body .info-text .distance-price-like .distance, .container .content-body .info-text .distance-price-like .price {
+        .container-parking .content-body .info-text .distance-price-like .distance, .container-parking .content-body .info-text .distance-price-like .price {
           font-size: 60px;
           font-weight: bold; }
-        .container .content-body .info-text .distance-price-like img {
+        .container-parking .content-body .info-text .distance-price-like img {
           height: 60px; }
-      .container .content-body .info-text .button {
+      .container-parking .content-body .info-text .button {
         height: 50px;
         margin: auto; }
