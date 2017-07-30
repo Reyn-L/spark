@@ -13,8 +13,21 @@ const book_stall_btn = document.getElementById('book-this-stall');
 const confirmation_modal = document.getElementById('booking-confirmation-modal');
 const go_toTimerBtn = document.getElementById('go-to-timer');
 const timer_modal = document.getElementById('timer-modal');
+const checkout_btn = document.getElementById('checkout-btn');
+const checkout_confirmation_modal = document.getElementById('checkout-confirmation-modal');
+const time = document.getElementById('time');
+
+
+checkout_btn.addEventListener('click', function() {
+  clearInterval(timerInterval);
+  total = 0;
+  time.innerText = '00:00:00';
+  timer_modal.className = '';
+  checkout_confirmation_modal.className += 'active';
+});
+
 let timerInterval;
-  let total = 0;
+let total = 0;
 
 
 book_stall_btn.addEventListener('click', function() {
@@ -24,7 +37,6 @@ book_stall_btn.addEventListener('click', function() {
 });
 
 go_toTimerBtn.addEventListener('click', function() {
-  const time = document.getElementById('time');
 
   timerInterval = setInterval(setTime, 1000);
 
